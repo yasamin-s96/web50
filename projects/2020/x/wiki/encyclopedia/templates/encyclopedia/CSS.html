@@ -1,3 +1,11 @@
-<h1>CSS</h1>
+{% extends "encyclopedia/layout.html" %}
 
-<p>CSS is a language that can be used to add style to an <a href="/wiki/HTML">HTML</a> page.</p>
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+
+    {{ content | safe }}
+
+{% endblock %}

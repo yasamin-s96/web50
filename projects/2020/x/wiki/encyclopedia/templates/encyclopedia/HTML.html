@@ -1,13 +1,11 @@
-<h1>HTML</h1>
+{% extends "encyclopedia/layout.html" %}
 
-<p>HTML is a markup language that can be used to define the structure of a web page. HTML elements include</p>
+{% block title %}
+    {{ title }}
+{% endblock %}
 
-<ul>
-<li>headings</li>
-<li>paragraphs</li>
-<li>lists</li>
-<li>links</li>
-<li>and more!</li>
-</ul>
+{% block body %}
 
-<p>The most recent major version of HTML is HTML5.</p>
+    {{ content | safe }}
+
+{% endblock %}
