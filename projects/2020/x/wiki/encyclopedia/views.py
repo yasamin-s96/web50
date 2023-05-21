@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseNotFound
+from django.http import HttpResponseNotFound, HttpResponse
 from django.core.files.storage import default_storage
 from . import util
 from markdown2 import Markdown
@@ -37,7 +37,17 @@ def entry(request, title):
     
     return HttpResponseNotFound()
 
-        
+
+def search(request, user_input):
+    
+    get_entry_result = entry(request, user_input)
+    
+    if not isinstance(get_entry_result, HttpResponse):
+        return get_entry_result()
+            
+    
+    
+    
         
     
 
